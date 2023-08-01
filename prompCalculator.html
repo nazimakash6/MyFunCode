@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript</title>
+</head>
+
+<body>
+  <h1>Javascript Code Practise</h1>
+
+  <script>
+
+    promptCal = () => {
+      let firstInput = parseInt(prompt("Enter your first number"));
+      let arithmeticSign = prompt('Enter one sign (*,-,+,/)');
+      let secondInput = parseInt(prompt("Enter your second number"));
+
+      if (!isNaN(firstInput && secondInput) && arithmeticSign == '*') {
+        mul = firstInput * secondInput;
+        console.log(`This is your answer: ${mul}`);
+      }
+      else if (!isNaN(firstInput && secondInput) && arithmeticSign == '+') {
+        sum = firstInput + secondInput;
+        console.log(`This is your answer: ${sum}`);
+      }
+      else if (!isNaN(firstInput && secondInput) && arithmeticSign == '-') {
+        min = firstInput - secondInput;
+        console.log(`This is your Answer: ${min}`);
+      }
+      else if (!isNaN(firstInput && secondInput) && arithmeticSign == '/') {
+        divison = firstInput / secondInput;
+        console.log(`This is your answer; ${divison}`);
+      }
+
+      else {
+        console.log("Enter the number");
+      }
+    }
+    promptCal();
+  </script>
+</body>
+
+</html>
