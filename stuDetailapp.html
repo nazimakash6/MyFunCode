@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #1abc9c;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        body,
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inputRoll {
+            text-align: center;
+
+        }
+
+        .main {
+            width: 500px;
+            padding: 50px;
+            box-shadow: 0 0 10px #2c3e50;
+            border-radius: 10px;
+        }
+
+        label,
+        p {
+            font-family: 'Jost', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-align: center;
+            margin: 30px 0;
+
+        }
+
+        h1,
+        label,
+        p {
+            color: #2c3e50;
+        }
+
+        p {
+            text-align: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 20px 0 0 20px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        input {
+            border: 1px solid #2c3e50;
+            background: none;
+            border-radius: 8px;
+            padding: 4px 0 4px 10px;
+            box-shadow: 0 0 3px #2c3e50;
+            margin: 0 auto;
+        }
+
+        input::placeholder {
+            color: #2c3e50;
+            opacity: 0.5;
+            font-size: 11px;
+            font-family: monospace;
+        }
+        input:focus{
+            outline: none;
+            border: 1px solid #2c3e50;
+        }
+
+        .btn {
+            margin: 30px 0 0 20px;
+        }
+
+        .btn button {
+            background-color: #2c3e50;
+            border: none;
+            padding: 10px 40px;
+            color: white;
+            font-size: 16px;
+            border-radius: 10px;
+            box-shadow: 0 0 4px #2c3e50;
+            letter-spacing: 2px;
+            margin: 0 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="inner_main">
+            <h1>Student Data Details</h1>
+
+            <form>
+                <div class="inputRoll">
+                    <label for="user_input">Roll Number / Name: </label>
+                    <input type="text" name="roll" id="user_input" placeholder="Enter Roll Number or Name">
+                </div>
+                <div class="btn">
+                    <button id="find">FIND</button>
+            </form>
+        </div class="para">
+
+        <p id="output"></p>
+    </div>
+    </div>
+
+    <script>
+        stuData = {
+            1: 'Nazim Akash',
+            2: 'Ahamd',
+            3: 'Aslam',
+            4: 'Umar',
+            5: 'Jani',
+            6: 'Ahamd Umar',
+            7: 'Ahamd Jani',
+            8: 'Safia',
+            9: 'Zain',
+            10: 'Shuban',
+            11: 'Zulqarnain',
+            12: 'Samina',
+            13: 'Ahamd Akash',
+            14: 'Uzair',
+            15: 'Zubair',
+            16: 'Umair',
+            17: 'Saira',
+            18: 'Sohail',
+            19: 'Malik',
+            20: 'Khaliq',
+            21: 'Raziq',
+            22: 'Jafir',
+            23: 'Abid',
+            24: 'Javeed',
+            25: 'Asif',
+            26: 'Shahid',
+            27: 'Safdar',
+            28: 'Rhamet',
+            29: 'Furqan',
+            30: 'Imran',
+            31: 'Yousaf',
+            32: 'Hassan',
+            33: 'Hussain',
+            34: 'Usman',
+            35: 'Ayesha',
+            36: 'Amna',
+            37: 'Khadija',
+            38: 'Fatima',
+            39: 'Allah Ditta',
+            40: 'Dil Shad',
+        };
+
+        document.getElementById('find').addEventListener('click',()=>{
+            event.preventDefault();
+            const userInput = document.getElementById('user_input').value;
+            const outputView = document.getElementById('output')
+            const checkPro = stuData.hasOwnProperty(userInput);
+            
+            if(checkPro == true){
+                outputView.innerHTML = stuData[userInput];
+            }
+            else{
+                const value = Object.keys(stuData).find(value => stuData[value] == userInput);
+                outputView.innerHTML = value || 'Not Found! Enter right value.';
+            }
+
+        })
+    </script>
+</body>
+</html>
