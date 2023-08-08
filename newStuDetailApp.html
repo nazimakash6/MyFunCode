@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Full Detail Software For Bignner</title>
+</head>
+<body>
+  <input type="text" id="user_input">
+  <button id="submit">Submit</button>
+  <p id="output_view"></p>
+
+  <script>
+    const stuDetail =[
+      {rollno:1, name:'Nazim Akash', fname: 'Bashir Ahmad', class:'Inter 2nd Year', incharge:'Ayub Shb', address:'Dhanote'},
+      {rollno:2, name:'Samina', fname: 'Siddique', class:'Inter 2nd Year', incharge:'Ayub Shb', address:'Dhanote'},
+      {rollno:3, name:'Ayesha', fname: 'Hameed', class:'Inter 2nd Year', incharge:'Ayub Shb', address:'Dhanote'},
+      {rollno:4, name:'Amna', fname: 'Khaliq', class:'Inter 2nd Year', incharge:'Ayub Shb', address:'Dhanote'},
+      {rollno:5, name:'Safia Irshad', fname: 'Irshad', class:'Inter 2nd Year', incharge:'Ayub Shb', address:'Dhanote'},
+      {rollno:6, name:'Ramzan Jani', fname: 'Hameed', class:'Inter 2nd Year', incharge:'Ayub Shb', address:'Dhanote'},
+      {rollno:7, name:'Shuban', fname: 'Khuda Baksh', class:'Inter 2nd Year', incharge:'Ayub Shb', address:'Dhanote'},
+      {rollno:8, name:'Zain', fname: 'Nazim Akash', class:'Inter 2nd Year', incharge:'Ayub Shb', address:'Dhanote'},
+      {rollno:9, name:'Safia Nazim', fname: 'Nazim Akash', class:'Inter 2nd Year', incharge:'Ayub Shb', address:'Dhanote'},
+      {rollno:10, name:'Zulqarnain', fname: 'Nazim Akash', class:'Inter 2nd Year', incharge:'Ayub Shb', address:'Dhanote'},
+      {rollno:11, name:'Muhammad Yousaf', fname: 'Malik', class:'Inter 2nd Year', incharge:'Ayub Shb', address:'Naly Wala'},
+      {rollno:12, name:'Ahmad Ali', fname: 'Gulzar Ali', class:'Inter 2nd Year', incharge:'Ayub Shb', address:'Lodharan'},
+      {rollno:13, name:'Pathan Khan', fname: 'Juma Khan', class:'Inter 2nd Year', incharge:'Ayub Shb', address:'Molvi Wala'},
+      ]
+
+      const submitBtn = document.getElementById('submit');
+      submitBtn.addEventListener('click', () => {
+        const userInput = document.getElementById('user_input').value;
+        const outputView = document.getElementById('output_view');
+
+        stuDetail.forEach(student => {
+          if(student.name == userInput || student.rollno == userInput){
+            outputView.innerHTML = `
+            Roll Number: ${student.rollno}<br>
+            Student Name: ${student.name}<br>
+            Father Name: ${student.fname}<br>
+            Class: ${student.class}<br>
+            Class Incharge: ${student.incharge}<br>
+            Address: ${student.address} <br>
+            `;
+          }
+        })
+      })
+  </script>
+</body>
+</html>
